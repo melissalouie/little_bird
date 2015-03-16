@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/pages/index' => 'pages#index'
   root 'pages#index'
   get '/auth/:provider/callback' => 'pages#index'
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
 
   resources :articles
   # The priority is based upon order of creation: first created -> highest priority.
