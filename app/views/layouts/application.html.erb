@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LittleBird</title>
+  <title>Little Bird</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <%= image_tag("bird.png", class: 'pull-left', id: 'icon') %>
+        <a class="navbar-brand" href="/">Little Bird</a>
+      </div>
+    </div>
+  </nav>
 
 <%= yield %>
 
