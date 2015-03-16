@@ -1,5 +1,10 @@
 <div class="container">
   <div class="page-header">
     <h1>Little Bird</h1>
+    <%= link_to 'Sign in With Twitter', '/auth/twitter' %>
   </div>
 </div>
+<%= form_tag '/pages/index', method: :get %>
+  <%= label_tag :text, 'Tweet' %>
+  <%= text_field_tag :text %>
+  <%= submit_tag %>

@@ -27,9 +27,11 @@ gem 'faraday', '~> 0.9.1'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 
-gem 'omniauth-twitter'
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'twitter'
+
+gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
