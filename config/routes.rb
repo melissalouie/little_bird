@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
+  get '/news' => 'news#index'
+  # get '/news/:article_id' => 'news#show'
+  # resources :news
+
+  get '/news/article' => 'news#show'
+
   root 'pages#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
