@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/signout' => 'sessions#destroy'
 
-  resources :articles
+  # get '/articles/index' => 'articles#index'
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

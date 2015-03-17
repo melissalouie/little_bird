@@ -14,12 +14,18 @@
         <a class="navbar-brand" href="/">Little Bird</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Sign Out', signout_path %></li>
-          <li><%= link_to 'Sign Up', signup_path %></li>
-          <li><%= link_to 'Sign In', signin_path %></li>
+        <% if session[:user_id] %>
+        <li><%= link_to 'Sign Out', signout_path %></li>
+        <% else %>
+        <li><%= link_to 'Sign in With Twitter', '/auth/twitter' %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
+
+<% if alert  %>
+<%= alert %>
+<% end %>
 
 <%= yield %>
 
