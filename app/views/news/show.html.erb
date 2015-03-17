@@ -1,0 +1,7 @@
+You made it
+<% if @article["multimedia"].present? %>
+<%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
+<% end %>
+<%= @article["headline"]["main"] %></br></br>
+<%= @article["lead_paragraph"] %>
+<%= link_to "Click to read more", @article["web_url"] %></br>
