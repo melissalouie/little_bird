@@ -11,19 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316205829) do
+ActiveRecord::Schema.define(version: 20150317164425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email"
-    t.string "password_digest"
+    t.string "name"
+    t.string "oauth_user_id"
+    t.string "token"
+    t.string "secret"
   end
 
 end

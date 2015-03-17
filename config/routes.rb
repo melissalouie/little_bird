@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/pages/index' => 'pages#index'
   root 'pages#index'
-  get '/auth/:provider/callback' => 'pages#index'
+  get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signup' => 'users#new'
