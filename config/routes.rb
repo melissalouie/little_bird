@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get '/pages/index' => 'pages#index'
   root 'pages#index'
   get '/auth/:provider/callback' => 'sessions#create'
@@ -11,6 +12,15 @@ Rails.application.routes.draw do
 
   # get '/articles/index' => 'articles#index'
   resources :users
+
+  get '/news' => 'news#index'
+  # get '/news/:article_id' => 'news#show'
+  # resources :news
+
+  get '/news/article' => 'news#show'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
