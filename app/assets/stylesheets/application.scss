@@ -1,9 +1,6 @@
-@import 'bootstrap';
-@import 'bootstrap-sprockets';
 
-body {
-  padding-top: 50px;
-}
+@import "foundation_and_overrides";
+
 
 #icon {
   height: 50px;
@@ -12,4 +9,8 @@ body {
 .navbar-inverse {
   background-color: #E9E9E9;
   border-color: #E9E9E9;
+}
+
+#twitter {
+  height: 50px;
 }
