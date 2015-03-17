@@ -1,0 +1,16 @@
+<%= link_to "World", news_path(section: "World") %>
+<%= link_to "US", news_path(section: "U.S.") %>
+<%= link_to "Business", news_path(section: "Business") %>
+<%= link_to "Technology", news_path(section: "Technology") %>
+<%= link_to "Science", news_path(section: "Science") %>
+<%= link_to "Health", news_path(section: "Health") %>
+<%= link_to "Sports", news_path(section: "Sports") %>
+<%= link_to "Arts", news_path(section: "Arts") %>
+<%= link_to "Style", news_path(section: "Style") %>
+<%= link_to "Food", news_path(section: "Food") %></br></br>
+
+<% @feed.each do |article| %>
+<%= link_to article["headline"]["main"], news_article_path(_id: article["_id"])  %></br>
+<%= article["snippet"] %></br></br>
+<% end %>
+<!-- [0]["headline"]["main"] -->

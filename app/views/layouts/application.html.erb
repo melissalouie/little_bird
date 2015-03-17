@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,6 +12,38 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+
+<html>
+<head>
+  <title>Little Bird</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <%= image_tag("bird.png", class: 'pull-left', id: 'icon') %>
+        <a class="navbar-brand" href="/">Little Bird</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if session[:user_id] %>
+        <li><%= link_to 'Sign Out', signout_path %></li>
+        <% else %>
+        <li><%= link_to 'Sign in With Twitter', '/auth/twitter' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+
+
+<% if alert  %>
+<%= alert %>
+<% end %>
+
+<%= yield %>
 
   <body>
     <div class="container">
