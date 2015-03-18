@@ -4,10 +4,6 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( vendor/modernizr.js )
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8e669ff8090d10190ccb2e586020020a1866c210
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 # Precompile additional assets.
