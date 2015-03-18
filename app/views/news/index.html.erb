@@ -18,7 +18,7 @@
     </div>
   <div class="articles">
     <% @feed.each do |article| %>
-      <p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"])  %></p>
+      <p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p>
       <p><%= article["snippet"] %></p>
     <% end %>
   </div>

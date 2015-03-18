@@ -29,5 +29,13 @@ class NytimesFetcher
 
   end
 
+  def nytimes_comments(web_url)
+    response = @nytimes_connection.get do |req|
+      req.url "/svc/community/v3/user-content/recent.json?url=#{web_url}"
+      req.params['api-key'] = ENV["NYTIMES_COMMUNITY_KEY"]
+      req.headers['Content-Type'] = 'application/json'
+    end
+    JSON.parse(response.body)
+  end
 
 end
