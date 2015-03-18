@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
 
-
-    <nav class="top-bar" data-topbar role="navigation">
-
+    <!-- <%= image_tag 'bird.png' %> -->
     <div class="icon-bar five-up">
-      <a class="item"><%= image_tag("bird.png", height: '95') %></a>
       <a class="item"></a>
       <a class="item"></a>
-    <a class="item">
-      <i class="fi-social-twitter"></i>
-      <label>Sign In</label>
-    </a>
-    <a class="item">
-      <i class="fi-social-twitter"></i>
-      <label>Sign Out</label>
-    </a>
+      <a class="item"></a>
 
-  </nav>
-</div>
+      <% if session[:user_id] %>
+      <a class="item">
+      </a>
+      <a class="item">
+        <i class="fi-social-twitter"></i>
+        <label><%= link_to 'Sign Out', signout_path %></label>
+      </a>
+      <% else %>
+      <a class="item">
+      </a>
+      <a class="item">
+        <i class="fi-social-twitter"></i>
+        <label>Sign In</label>
+      </a>
+      <% end %>
+  </div>
 
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>
