@@ -14,3 +14,109 @@
 #twitter {
   height: 50px;
 }
+
+.btn {
+  float: left;
+  margin: 1.5em 0 0 0;
+  background: #999;
+  padding: 0.25em 2%;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.25em;
+  background-color: #5b5756;
+  background-image: -webkit-linear-gradient(top, #6b6766, #5b5756);
+  background-image:    -moz-linear-gradient(top, #6b6766, #5b5756);
+  background-image:     -ms-linear-gradient(top, #6b6766, #5b5756);
+  background-image:      -o-linear-gradient(top, #6b6766, #5b5756);
+  background-image:         linear-gradient(top, #6b6766, #5b5756);
+}
+
+.btn:hover {
+  background-color: #7b7776;
+  background-image: -webkit-linear-gradient(top, #8b8786, #7b7776);
+  background-image:    -moz-linear-gradient(top, #8b8786, #7b7776);
+  background-image:     -ms-linear-gradient(top, #8b8786, #7b7776);
+  background-image:      -o-linear-gradient(top, #8b8786, #7b7776);
+  background-image:         linear-gradient(top, #8b8786, #7b7776);
+}
+
+#toggle {
+  position: absolute;
+  left: -999em;
+}
+
+nav {
+  position: fixed;
+  left: -75%;
+  width: 75%;
+  height: 100%;
+  padding: 5em 0 0 0;
+  background: #3b3736;
+
+  -webkit-transition: left 0.5s;
+     -moz-transition: left 0.5s;
+      -ms-transition: left 0.5s;
+       -o-transition: left 0.5s;
+          transition: left 0.5s;
+}
+
+.close {
+  cursor: pointer;
+  color: #fff;
+}
+
+.close:hover {
+  color: #999;
+}
+
+.close span {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 0.2em 0.4em;
+}
+
+#nav {
+  margin: 0.1875em 0 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #777;
+}
+
+#nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1em 0 1em 5%;
+  display: block;
+  border-bottom: 1px solid #777;
+  height: 4em;
+  background-image: -webkit-linear-gradient(top, #4b4746, #3b3736);
+  background-image:    -moz-linear-gradient(top, #4b4746, #3b3736);
+  background-image:     -ms-linear-gradient(top, #4b4746, #3b3736);
+  background-image:      -o-linear-gradient(top, #4b4746, #3b3736);
+  background-image:         linear-gradient(top, #4b4746, #3b3736);
+}
+
+#nav a:hover {
+  background: #4b4746;
+  background-image: -webkit-linear-gradient(top, #5b5756, #4b4746);
+  background-image:    -moz-linear-gradient(top, #5b5756, #4b4746);
+  background-image:     -ms-linear-gradient(top, #5b5756, #4b4746);
+  background-image:      -o-linear-gradient(top, #5b5756, #4b4746);
+  background-image:         linear-gradient(top, #5b5756, #4b4746);
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.inner {
+  float: right;
+  width: 100%;
+
+  -webkit-transition: 0.5s;
+     -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+       -o-transition: 0.5s;
+          transition: 0.5s;
+}

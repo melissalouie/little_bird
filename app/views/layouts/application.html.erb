@@ -21,56 +21,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <%= image_tag("bird.png", class: 'pull-left', id: 'icon') %>
-        <a class="navbar-brand" href="/">Little Bird</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <% if session[:user_id] %>
-        <li><%= link_to 'Sign Out', signout_path %></li>
-        <% else %>
-        <li><%= link_to 'Sign in With Twitter', '/auth/twitter' %></li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-
-
-
-<% if alert  %>
-<%= alert %>
-<% end %>
-
-<%= yield %>
-
-  <body>
-    <div class="container">
+  <div class="container">
     <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-
-      <li class="name">
-
-        <h1><a href="#">Little Bird</a></h1>
-
-
-      </li>
-
-
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <%= image_tag('twitter.png', size: '50') %>
-        <li><a href="/auth/twitter">Sign In</a></li>
-        <li class="has-dropdown"></li>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Little Bird</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-    </section>
-  </nav>
-    <%= yield %>
-  </div>
-  </body>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <%= image_tag('twitter.png', size: '50') %>
+          <li><a href="/auth/twitter">Sign In</a></li>
+          <li class="has-dropdown"></li>
+        </ul>
+      </section>
+    </nav>
 
+      <% if alert  %>
+        <%= alert %>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </body>
 </html>

@@ -24,8 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # raw api
 gem 'faraday', '~> 0.9.1'
-#bootstrap
-gem 'bootstrap-sass', '~> 3.3.1'
+
 
 gem 'omniauth'
 gem 'omniauth-twitter'
