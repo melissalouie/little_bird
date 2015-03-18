@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   get '/signout' => 'sessions#destroy'
+  post '/news/article' => 'news#show'
 
+  post '/tweet' => 'news#tweetpost'
   # get '/articles/index' => 'articles#index'
   resources :users
 

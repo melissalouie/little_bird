@@ -10,6 +10,6 @@ class NewsController < ApplicationController
     nytimes_fetcher = NytimesFetcher.new
     @article = nytimes_fetcher.article(params[:_id])["response"]["docs"][0]
     @comments = nytimes_fetcher.nytimes_comments(params[:web_url])["results"]["comments"]
-    end
+  end
 
 end
