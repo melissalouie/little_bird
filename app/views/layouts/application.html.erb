@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
+
 
 <html lang="en">
   <head>
@@ -15,9 +15,9 @@
   </head>
 
 <html>
-=======
+
 <html lang="en">
->>>>>>> 8e669ff8090d10190ccb2e586020020a1866c210
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,63 +29,39 @@
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<body class="home">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+ <%= stylesheet_link_tag    "application" %>
+ <%= javascript_include_tag "vendor/modernizr" %>
+ <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+</head>
 
 <body>
-<<<<<<< HEAD
-  <div class="container">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Little Bird</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-      </ul>
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <%= image_tag('twitter.png', size: '50') %>
-          <li><a href="/auth/twitter">Sign In</a></li>
-          <li class="has-dropdown"></li>
-        </ul>
-      </section>
-    </nav>
-
+  <!-- <%= image_tag 'bird.png' %> -->
+   <div class="icon-bar five-up">
+     <h1><a class="name"><%= link_to 'Little Bird', root_path %></a></h1>
+     <% if session[:user_id] %>
+       <a class="item">
+         <label><%= link_to 'Sign Out', signout_path %></label>
+       </a>
+       <% else %>
+       <a class="item right">
+         <%= image_tag('twitter.png') %>
+         <label>Sign In</label>
+       </a>
+       <% end %>
+     </div>
       <% if alert  %>
         <%= alert %>
-      <% end %>
-
-      <%= yield %>
-
-    </div>
-  </body>
-=======
-
-    <!-- <%= image_tag 'bird.png' %> -->
-    <div class="icon-bar five-up">
-      <a class="item"></a>
-      <a class="item"></a>
-      <a class="item"></a>
-
-      <% if session[:user_id] %>
-      <a class="item">
-      </a>
-      <a class="item">
-        <i class="fi-social-twitter"></i>
-        <label><%= link_to 'Sign Out', signout_path %></label>
-      </a>
-      <% else %>
-      <a class="item">
-      </a>
-      <a class="item">
-        <i class="fi-social-twitter"></i>
-        <label>Sign In</label>
-      </a>
-      <% end %>
-  </div>
-
-
+    <% end %>
   <%= yield %>
-
 </body>
->>>>>>> 8e669ff8090d10190ccb2e586020020a1866c210
 </html>

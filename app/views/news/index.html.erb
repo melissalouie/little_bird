@@ -1,45 +1,25 @@
+<div class="container">
 
-
-
-  <ul>
-    <li class="title">Categories</li>
-    <li>
-      <%= link_to "World", news_path(section: "World") %>
-    </li>
-    <li>
-      <%= link_to "US", news_path(section: "U.S.") %>
-    </li>
-    <li>
-      <%= link_to "Business", news_path(section: "Business") %>
-    </li>
-    <li>
-      <%= link_to "Technology", news_path(section: "Technology") %>
-    </li>
-    <li>
-      <%= link_to "Science", news_path(section: "Science") %>
-    </li>
-    <li>
-      <%= link_to "Health", news_path(section: "Health") %>
-    </li>
-    <li>
-      <%= link_to "Sports", news_path(section: "Sports") %>
-    </li>
-    <li>
-      <%= link_to "Arts", news_path(section: "Arts") %>
-    </li>
-    <li>
-      <%= link_to "Style", news_path(section: "Style") %>
-    </li>
-    <li>
-      <%= link_to "Food", news_path(section: "Food") %>
-    </li>
-  </ul>
-
-
-
-
-<% @feed.each do |article| %>
-<%= link_to article["headline"]["main"], news_article_path(_id: article["_id"])  %></br>
-<%= article["snippet"] %></br></br>
-<% end %>
-<!-- [0]["headline"]["main"] -->
+  <div class="sidebar">
+       <nav>
+          <ul class="sidebar-nav">
+             <li><%= link_to "World", news_path(section: "World") %></li>
+             <li><%= link_to "US", news_path(section: "U.S.") %></li>
+             <li><%= link_to "Business", news_path(section: "Business") %></li>
+             <li><%= link_to "Technology", news_path(section: "Technology") %></li>
+             <li><%= link_to "Science", news_path(section: "Science") %></li>
+             <li><%= link_to "Health", news_path(section: "Health") %></li>
+             <li><%= link_to "Sports", news_path(section: "Sports") %></li>
+             <li><%= link_to "Arts", news_path(section: "Arts") %></li>
+             <li><%= link_to "Style", news_path(section: "Style") %></li>
+             <li><%= link_to "Food", news_path(section: "Food") %></li>
+          </ul>
+       </nav>
+    </div>
+  <div class="articles">
+    <% @feed.each do |article| %>
+      <p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"])  %></p>
+      <p><%= article["snippet"] %></p>
+    <% end %>
+  </div>
+</div>
