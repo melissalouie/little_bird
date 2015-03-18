@@ -44,6 +44,9 @@ a {
   font-size: 100%;
 }
 
+.sidebar {
+  position: relative;
+}
 
 ul {
   list-style: none;
@@ -63,4 +66,9 @@ nav {
 
 .articles a {
   color: black;
+}
+
+.articles {
+  position: absolute;
+  margin-top: -553px;
 }
