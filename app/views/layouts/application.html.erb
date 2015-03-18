@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Little Bird</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <%= image_tag("bird.png", class: 'pull-left', id: 'icon') %>
-        <a class="navbar-brand" href="/">Little Bird</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <% if session[:user_id] %>
-        <li><%= link_to 'Sign Out', signout_path %></li>
-        <% else %>
-        <li><%= link_to 'Sign in With Twitter', '/auth/twitter' %></li>
-        <% end %>
-      </ul>
-    </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+
+    <nav class="top-bar" data-topbar role="navigation">
+
+    <div class="icon-bar five-up">
+      <a class="item"><%= image_tag("bird.png", height: '95') %></a>
+      <a class="item"></a>
+      <a class="item"></a>
+    <a class="item">
+      <i class="fi-social-twitter"></i>
+      <label>Sign In</label>
+    </a>
+    <a class="item">
+      <i class="fi-social-twitter"></i>
+      <label>Sign Out</label>
+    </a>
+
   </nav>
+</div>
 
 
+    <%= yield %>
 
-<% if alert  %>
-<%= alert %>
-<% end %>
-
-<%= yield %>
-
-  <footer>
-    <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <p><i>Copyright © 2015 gSchool, All rights reserved.</i></p>
-      </div>
-    </div>
-  </div>
-  </footer>
-</body>
+  </body>
 </html>

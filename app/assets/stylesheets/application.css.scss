@@ -1,15 +1,7 @@
-@import 'bootstrap';
-@import 'bootstrap-sprockets';
+@import "foundation_and_overrides";
+@import "foundation-icons";
 
 body {
-  padding-top: 50px;
-}
-
-#icon {
-  height: 50px;
-}
-
-.navbar-inverse {
-  background-color: #E9E9E9;
-  border-color: #E9E9E9;
-}
+  background-image: asset-url("/cityscape.jpg");
+  background-size: 100%;
+  }

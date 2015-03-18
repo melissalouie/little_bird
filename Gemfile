@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -30,7 +29,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
-
+gem 'foundation-rails'
 gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
