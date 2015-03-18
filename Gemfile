@@ -30,6 +30,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'foundation-rails'
 gem 'dotenv-rails'
+gem 'masonry-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
