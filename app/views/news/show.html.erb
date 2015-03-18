@@ -1,7 +1,14 @@
-You made it
+<%= link_to "Go Back", :back %>
 <% if @article["multimedia"].present? %>
 <%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
 <% end %>
 <%= @article["headline"]["main"] %></br></br>
 <%= @article["lead_paragraph"] %>
 <%= link_to "Click to read more", @article["web_url"] %></br>
+
+<% if @comments.present? %>
+  <% @comments.each do |comment| %>
+  <%= comment["commentBody"] %></br>
+  <%= comment["userDisplayName"] %></br></br>
+  <% end %>
+<% end %>

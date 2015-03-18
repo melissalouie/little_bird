@@ -10,7 +10,7 @@
 <%= link_to "Food", news_path(section: "Food") %></br></br>
 
 <% @feed.each do |article| %>
-<%= link_to article["headline"]["main"], news_article_path(_id: article["_id"])  %></br>
+<%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"])  %></br>
 <%= article["snippet"] %></br></br>
 <% end %>
 <!-- [0]["headline"]["main"] -->

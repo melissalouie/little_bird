@@ -8,7 +8,8 @@ class NewsController < ApplicationController
 
   def show
     nytimes_fetcher = NytimesFetcher.new
-    @article = nytimes_fetcher.article(params[:_id] ||= "550862c938f0d819240d10c1")["response"]["docs"][0]
-  end
+    @article = nytimes_fetcher.article(params[:_id])["response"]["docs"][0]
+    @comments = nytimes_fetcher.nytimes_comments(params[:web_url])["results"]["comments"]
+    end
 
 end
