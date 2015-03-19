@@ -29,7 +29,6 @@ gem 'masonry-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
-gem 'foundation-rails'
 gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
