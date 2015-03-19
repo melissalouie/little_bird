@@ -102,14 +102,17 @@ nav {
 .main {
   background: transparent;
   background: rgba(255, 255, 255, 0.2);
-  height: 300px;
+  height: 350px;
   margin-top: 150px;
 }
 
 .main img {
   height: 70px;
-  margin-left: 750px;
-  margin-top: -115px;
+  // margin-left: 750px;
+  // margin-top: -115px;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 
 .main p {
@@ -117,7 +120,7 @@ nav {
   text-align: center;
   color: white;
   font-size: 50px;
-  margin-right: 110px;
+  // margin-right: 110px;
 
 }
 
