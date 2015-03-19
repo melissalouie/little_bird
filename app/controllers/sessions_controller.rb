@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     @token = user.update_attributes(token: env['omniauth.auth']['credentials']['token'])
     @secret = user.update_attributes(secret: env['omniauth.auth']['credentials']['secret'])
 
-    redirect_to root_path
+    redirect_to news_path
   end
 
   def destroy

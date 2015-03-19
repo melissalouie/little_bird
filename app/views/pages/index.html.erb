@@ -1,17 +1,7 @@
-<body>
-<div class="container">
-  <div class="page-header">
+<body class="home">
+  <div class="main">
     <h1>Little Bird</h1>
+    <p>Sign In</p>
+    <%= link_to image_tag('button.png'), '/auth/twitter' %>
   </div>
-</div>
-<div class="container">
-  <form>
-    <div class="large-4 columns">
-      <label>Tweet
-        <%= text_field_tag :text, nil, class: 'large-4 columns' %>
-      </label>
-      <%= submit_tag 'Submit', class: 'button tiny' %>
-    </div>
-  </form>
-</div>
 </body>

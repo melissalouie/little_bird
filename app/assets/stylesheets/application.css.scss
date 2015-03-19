@@ -92,3 +92,39 @@ nav {
  height: 260px;
  width: 126px;
 }
+
+// Homepage Styles
+
+.home {
+  background-image: url('background.jpg');
+}
+
+.main {
+  background: transparent;
+  background: rgba(255, 255, 255, 0.2);
+  height: 300px;
+  margin-top: 150px;
+}
+
+.main img {
+  height: 70px;
+  margin-left: 750px;
+  margin-top: -115px;
+}
+
+.main p {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  margin-right: 110px;
+
+}
+
+.main h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 78px;
+  padding-top: 60px;
+  color: white;
+}
