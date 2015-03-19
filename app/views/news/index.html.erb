@@ -16,13 +16,12 @@
           </ul>
        </nav>
     </div>
-  <div class="articles">
+  <div class="container articles">
     <% @feed.each do |article| %>
-      <div class="large-4 columns">
-        <p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p>
+      <div class="box col3">
+        <b><i><p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p></i></b>
         <p><%= article["snippet"] %></p>
-        <p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p>
-        <p><%= article["snippet"] %></p>
+        <%= link_to 'Read More',  news_article_path(_id: article["_id"], web_url: article["web_url"]), class: 'button tiny'  %>
       </div>
     <% end %>
   </div>

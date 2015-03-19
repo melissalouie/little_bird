@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require masonry/jquery.masonry
 //= require jquery
 //= require jquery_ujs
 //= require foundation
@@ -20,3 +21,16 @@ $(document).foundation();
 
 
 $(function(){ $(document).foundation(); });
+
+
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  // options
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+
+$('#container').masonry({
+  itemSelector: '.box',
+  columnWidth: 100
+});

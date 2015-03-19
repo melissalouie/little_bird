@@ -1,5 +1,12 @@
 @import "foundation-icons";
 @import "foundation_and_overrides";
+@import 'masonry/basic';
+@import 'masonry/centered';
+@import 'masonry/fluid';
+@import 'masonry/gutters';
+@import 'masonry/infinitescroll';
+@import 'masonry/right-to-left';
+@import 'masonry/transitions';
 
 .home body {
   background-image: asset-url("/cityscape.jpg");
@@ -60,9 +67,6 @@ nav {
   padding-bottom: 5000px;
 }
 
-.articles p {
-  margin-left: 150px;
-}
 
 .articles a {
   color: black;
@@ -70,5 +74,15 @@ nav {
 
 .articles {
   position: absolute;
-  margin-top: -553px;
+  margin-top: -563px;
+}
+
+.container .articles {
+  margin-left: 125px;
+}
+
+.box {
+  background-color: white;
+
+
 }
