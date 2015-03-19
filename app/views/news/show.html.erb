@@ -2,13 +2,13 @@
 <% if @article["multimedia"].present? %>
 <%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
 <% end %>
-<%= @article["headline"]["main"] %></br></br>
-<%= @article["lead_paragraph"] %>
+<%= @article["headline"]["main"].html_safe %></br></br>
+<%= @article["lead_paragraph"].html_safe %>
 <%= link_to "Click to read more", @article["web_url"] %></br>
 
 <% if @comments.present? %>
   <% @comments.each do |comment| %>
-  <%= comment["commentBody"] %></br>
+  <%= comment["commentBody"].html_safe %></br>
   <%= comment["userDisplayName"] %></br></br>
   <% end %>
 <% end %>
@@ -21,3 +21,8 @@ Start the conversation on Twitter</br>
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url=<%= @article["web_url"] %> data-text="via Little Bird" data-size="large" data-hashtags="littlebirdapp">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<% @tweet_bucket.each do |tweet| %>
+<ul><%= tweet.text %></ul>
+<ul> - <%= tweet.user.name %></ul>
+<% end %>

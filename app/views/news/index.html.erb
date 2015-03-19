@@ -18,6 +18,7 @@
     </div>
   <div class="container articles">
     <% @feed.each do |article| %>
+
       <div class="box col3">
         <b><i><p><%= link_to article["headline"]["main"], news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p></i></b>
         <p><%= article["snippet"] %></p>
