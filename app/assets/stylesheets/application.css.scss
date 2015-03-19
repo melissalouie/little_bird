@@ -131,3 +131,58 @@ nav {
   padding-top: 60px;
   color: white;
 }
+
+// News Showpage Styles
+
+.show {
+  padding-top: 70px;
+}
+
+.show p {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 25px;
+  font-size: 17px;
+}
+
+#headline {
+  font-size: 34px;
+}
+
+.comments {
+  margin-top: 30px;
+}
+
+.fa {
+  font-size: 30px
+}
+
+.fa p {
+  float: right;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+#back {
+  margin-bottom: 20px;
+}
+
+.tweet {
+  display: inline-block;
+  padding: 16px;
+  margin: 10px 0;
+  max-width: 468px;
+  border: #ddd 1px solid;
+  border-top-color: #eee;
+  border-bottom-color: #bbb;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  font: bold 14px/18px Helvetica, Arial, sans-serif;
+  color: #000;
+}
+
+.tweet p {
+  font: normal 18px/24px Georgia, "Times New Roman", Palatino, serif;
+  margin: 0 5px 10px 0;
+  font-size: 17px;
+}

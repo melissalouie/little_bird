@@ -1,28 +1,40 @@
-<%= link_to "Go Back", :back %>
-<% if @article["multimedia"].present? %>
-<%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
-<% end %>
-<%= @article["headline"]["main"].html_safe %></br></br>
-<%= @article["lead_paragraph"].html_safe %>
-<%= link_to "Click to read more", @article["web_url"] %></br>
-
-<% if @comments.present? %>
-  <% @comments.each do |comment| %>
-  <%= comment["commentBody"].html_safe %></br>
-  <%= comment["userDisplayName"] %></br></br>
+<div class="container show">
+  <div class="page-header">
+    <%= link_to "Go Back", :back, class: 'btn btn-default pull-right', id: 'back' %>
+    <p id="headline"><b><%= @article["headline"]["main"].html_safe %></b></p>
+  </div>
+  <% if @article["multimedia"].present? %>
+    <%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
   <% end %>
-<% end %>
+  <p><%= @article["lead_paragraph"].html_safe %></p>
+  <%= link_to "Read More", @article["web_url"], class: 'btn btn-default' %></br>
 
-<% if @comments.present? %>
-Continue the conversation on Twitter</br>
-<% else %>
-Start the conversation on Twitter</br>
-<% end %>
+  <div class="comments">
+    <% if @comments.present? %>
+    <i class="fa fa-comment"><p>Here's What NyTimes Readers are Saying:</p></i>
+      <% @comments.each do |comment| %>
+        <div class="well">
+          <p><%= comment["commentBody"].html_safe %></p>
+          <p><i><%= comment["userDisplayName"] %></i></p>
+        </div>
+      <% end %>
+    <% end %>
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url=<%= @article["web_url"] %> data-text="via Little Bird" data-size="large" data-hashtags="littlebirdapp">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <% if @comments.present? %>
+      <p>Continue the conversation on Twitter<p>
+    <% else %>
+      <p>Start the conversation on Twitter</p>
+    <% end %>
 
-<% @tweet_bucket.each do |tweet| %>
-<ul><%= tweet.text %></ul>
-<ul> - <%= tweet.user.name %></ul>
-<% end %>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url=<%= @article["web_url"] %> data-text="via Little Bird" data-size="large" data-hashtags="littlebirdapp">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <% if @comments.present? %>
+      <div class="tweet">
+        <% @tweet_bucket.each do |tweet| %>
+          <p><%= tweet.text %><p>
+          <p> - <%= tweet.user.name %> ( @<%= tweet.user.screen_name %> )</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
