@@ -15,42 +15,18 @@
 
 <html>
 
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="home">
-  <!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
- <%= stylesheet_link_tag    "application" %>
- <%= javascript_include_tag "vendor/modernizr" %>
- <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
- <%= csrf_meta_tags %>
-</head>
 
 <body>
   <!-- <%= image_tag 'bird.png' %> -->
-   <div class="icon-bar five-up">
-     <h1><a class="name"><%= link_to 'Little Bird', root_path %></a></h1>
+
+    <nav class="navbar nabar-default">
+     <h1><%= link_to 'Little Bird', root_path %></h1>
      <% if session[:user_id] %>
-       <a class="item">
+
          <label><%= link_to 'Sign Out', signout_path %></label>
        </a>
        <% else %>
-       <a class="item right">
+
          <%= image_tag('twitter.png') %>
          <label>Sign In</label>
        </a>
@@ -59,6 +35,8 @@
       <% if alert  %>
         <%= alert %>
     <% end %>
+  </nav>
+
   <%= yield %>
 </body>
 </html>

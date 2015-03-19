@@ -1,4 +1,4 @@
-<div class="container">
+
 
   <div class="sidebar">
        <nav>
@@ -16,9 +16,12 @@
           </ul>
        </nav>
     </div>
+
+    <div class="container">
+
   <div class="container articles">
     <% @feed.each do |article| %>
-    <div class="box col4 panel panel-default">
+    <div class="box col3">
         <b><i><p><%= link_to article["headline"]["main"].truncate(60).html_safe, news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p></i></b>
         <% if article["multimedia"].present? %>
         <%= image_tag("http://www.nytimes.com/#{article["multimedia"][0]["url"]}") %>
@@ -30,5 +33,7 @@
       </div>
     <% end %>
   </div>
+
+
 
 </div>
