@@ -138,12 +138,6 @@
     }
 }
 
-
-.home body {
-  background-image: asset-url("/cityscape.jpg");
-  background-size: 100%;
-}
-
 a {
   color: white;
   font-size: 150%;
@@ -216,6 +210,14 @@ nav {
 
 .home {
   background-image: url('background.jpg');
+}
+
+.index {
+  background-image: url('1-background.jpg');
+}
+
+.show {
+  background-image: url('show_background.jpg');
 }
 
 .main {
