@@ -18,6 +18,16 @@ class NytimesFetcher
     JSON.parse(response.body)
   end
 
+  def news2(section)
+    response = @nytimes_connection.get do |req|
+      req.url "/svc/search/v2/articlesearch.json?page=2&fq=section_name:(#{section})"
+      req.params['api-key'] = ENV["NYTIMES_KEY"]
+      # req.params['page'] = 2
+      req.headers['Content-Type'] = 'application/json'
+    end
+    JSON.parse(response.body)
+  end
+
 
   def article(_id)
     response = @nytimes_connection.get do |req|

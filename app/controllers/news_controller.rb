@@ -4,6 +4,7 @@ class NewsController < ApplicationController
   def index
     nytimes_fetcher = NytimesFetcher.new
      @feed = nytimes_fetcher.news(params[:section] ||= "Arts")["response"]["docs"]
+     @feed2 = nytimes_fetcher.news2(params[:section] ||= "Arts")["response"]["docs"]
     # (params[:category_id])["articles"]
   end
 
