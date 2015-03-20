@@ -13,7 +13,7 @@
 
   <div class="comments">
     <% if @comments.present? %>
-    <i class="fa fa-comment"><p>Here's What NyTimes Readers are Saying:</p></i>
+    <i class="fa fa-comment"><p>Here's What New York Times Readers are Saying:</p></i>
       <% @comments.each do |comment| %>
         <div class="well">
           <p><%= comment["commentBody"].html_safe %></p>
@@ -22,7 +22,7 @@
       <% end %>
     <% end %>
 
-    <% if @comments.present? %>
+    <% unless @comments.present? || @tweet_bucket.present? %>
       <p>Continue the conversation on Twitter<p>
     <% else %>
       <p>Start the conversation on Twitter</p>
@@ -30,13 +30,16 @@
 
     <a href="https://twitter.com/share" class="twitter-share-button" data-url=<%= @article["web_url"] %> data-text="via Little Bird" data-size="large" data-hashtags="littlebirdapp">Tweet</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <% if @comments.present? %>
-      <div class="tweet">
-        <% @tweet_bucket.each do |tweet| %>
+    <br/>
+
+    <% if @tweet_bucket.present? %>
+      <% @tweet_bucket.each do |tweet| %>
+        <div class="tweet">
           <p><%= tweet.text %><p>
           <p> - <%= tweet.user.name %> ( @<%= tweet.user.screen_name %> )</p>
-        <% end %>
-      </div>
+        </div>
+        <br/>
+      <% end %>
     <% end %>
   </div>
 </div>
