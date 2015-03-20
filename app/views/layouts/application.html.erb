@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,9 +13,9 @@
   </head>
 <html>
 <body>
-      <% if alert  %>
-        <%= alert %>
-    <% end %>
+  <% if flash[:alert] %>
+    <div class = "alert alert-info text-center"><%= flash[:alert] %></div>
+  <% end %>
   <%= yield %>
 </body>
 </html>

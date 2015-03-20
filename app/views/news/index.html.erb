@@ -1,7 +1,7 @@
-
 <div id="wrapper">
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
+      <li id="header">Little Bird</li>
       <li><%= link_to "World", news_path(section: "World") %></li>
       <li><%= link_to "US", news_path(section: "U.S.") %></li>
       <li><%= link_to "Business", news_path(section: "Business") %></li>
@@ -12,6 +12,7 @@
       <li><%= link_to "Arts", news_path(section: "Arts") %></li>
       <li><%= link_to "Style", news_path(section: "Style") %></li>
       <li><%= link_to "Food", news_path(section: "Food") %></li>
+      <li><%= link_to "Sign Out", signout_path %></li>
    </ul>
   </ul>
 </div>
