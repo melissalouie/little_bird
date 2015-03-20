@@ -10,7 +10,7 @@
   <% if @article["lead_paragraph"].present? %>
   <p><%= @article["lead_paragraph"].html_safe %></p>
   <% end %>
-  <%= link_to "Read More", @article["web_url"], class: 'btn btn-default' %></br>
+  <%= link_to "Read More", @article["web_url"], class: 'btn btn-default', target: "_blank" %></br>
 
   <div class="comments">
     <% if @comments.present? %>
@@ -33,7 +33,7 @@
       <% @tweet_bucket.each do |tweet| %>
         <div class="tweet">
           <p><%= tweet.text %><p>
-          <p> - <%= tweet.user.name %> ( @<%= tweet.user.screen_name %> )</p>
+          <p> - <%= tweet.user.name %> (@<%= link_to tweet.user.screen_name, "http://www.twitter.com/#{tweet.user.screen_name}" %> )</p>
         </div>
         <br/>
       <% end %>

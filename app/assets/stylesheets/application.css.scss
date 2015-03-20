@@ -139,7 +139,7 @@
 }
 
 a {
-  color: white;
+  color: cadetblue;
   font-size: 150%;
 }
 
@@ -245,38 +245,6 @@ nav {
 
 }
 
-.main a:link {
-  font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-	color: white;
-	text-decoration: none;
-  font-size: 50px;
-}
-
-.main a:visited {
-  font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-	text-decoration: none;
-	color: white;
-  font-size: 50px;
-}
-
-.main a:hover {
-  font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-	text-decoration: none;
-	color: white;
-  font-size: 50px;
-}
-
-.main a:active {
-  font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-	text-decoration: none;
-	color: white;
-  font-size: 50px;
-}
-
 .main h1 {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
@@ -339,4 +307,15 @@ nav {
   font: normal 18px/24px Georgia, "Times New Roman", Palatino, serif;
   margin: 0 5px 10px 0;
   font-size: 17px;
+}
+
+.tweet a {
+  color: cadetblue;
+  font-size: 100%
+}
+
+.tweet a:hover {
+  color: cadetblue;
+  font-size: 100%;
+	text-decoration: none;
 }
