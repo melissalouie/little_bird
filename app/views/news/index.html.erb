@@ -22,7 +22,7 @@
   <div class="box col4 panel panel-default">
       <strong><em><p><%= link_to article["headline"]["main"].truncate(100).html_safe, news_article_path(_id: article["_id"], web_url: article["web_url"]) %></p></em>
       <% if article["multimedia"].present? %>
-      <%= image_tag("http://www.nytimes.com/#{article["multimedia"][0]["url"]}") %>
+      <%= image_tag("http://www.nytimes.com/#{article["multimedia"][1]["url"]}", :width => 380, :height => 222) %>
       <% else %>
       <%= image_tag('paperbird.png', class: "image-size") %>
       <% end %>
