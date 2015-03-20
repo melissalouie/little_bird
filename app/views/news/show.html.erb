@@ -6,7 +6,9 @@
   <% if @article["multimedia"].present? %>
     <%= image_tag("http://www.nytimes.com/#{@article["multimedia"][1]["url"]}") %>
   <% end %>
+  <% if @article["lead_paragraph"].present? %>
   <p><%= @article["lead_paragraph"].html_safe %></p>
+  <% end %>
   <%= link_to "Read More", @article["web_url"], class: 'btn btn-default' %></br>
 
   <div class="comments">
